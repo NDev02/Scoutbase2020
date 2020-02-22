@@ -1,0 +1,48 @@
+<!-- strategyInit() -->
+<h1 id="name">Scenario Generator</h1>
+
+<div class="card" id="event">
+    <h1 class="label desktop">Set Event</h1>
+    <div class="content">
+        <h1 class="label mobile">Set Event</h1>
+        <div class="grid mobile-no-col col-2">
+            <p>No event selected.</p>
+            <select>
+                <option>No event selected.</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="card" id="team-details" hidden>
+    <h1 class="label desktop">Team Details</h1>
+    <div class="content grid mobile-no-row row-3">
+        <h1 class="label mobile">Team Details</h1>
+        <p><span id="team-count"></span> teams</p>
+        <div class="grid mobile-no-col col-2">
+            <p>Alliance Size</p><input type="number" id="alliance-size" min="1" max="10" value="3">
+        </div>
+        <div class="grid mobile-no-col col-2">
+            <p>Scenario Odds (% per alliance)</p><input type="number" id="scenario-odds" min="0" max="100" value="50">
+        </div>
+        <button class="button-secondary fill-width" onclick="runScenario()">Run</button>
+    </div>
+</div>
+
+<div class="card" id="blue-alliance" hidden>
+    <h1 class="label desktop">Blue Alliance</h1>
+    <div class="content">
+        <h1 class="label mobile">Blue Alliance</h1>
+        <div class="grid mobile-no-col col-a">
+        </div>
+    </div>
+</div>
+
+<div class="card" id="red-alliance" hidden>
+    <h1 class="label desktop">Red Alliance</h1>
+    <div class="content">
+        <h1 class="label mobile">Red Alliance</h1>
+        <div class="grid mobile-no-col col-a">
+        </div>
+    </div>
+</div>

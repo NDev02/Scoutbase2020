@@ -1,0 +1,104 @@
+<!--scoutInit()-->
+<div class="card" id="event-info">
+    <h1 class="label desktop">Scouting Event</h1>
+    <div class="content">
+        <h1 class="label mobile">Scouting Event</h1>
+        <div class="grid">
+            <select id="scouting-event" required="true">
+                <option>None</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="card" id="form-configuration">
+    <h1 class="label desktop">Form Configuration</h1>
+    <div class="content">
+        <h1 class="label mobile">Form Configuration</h1>
+        <div class="grid mobile-no-col col-2">
+            <p>Match Number</p><input type="number" id="match-number" required="true">
+            <p>Team Number</p><input type="number" id="team-number" required="true">
+            <p>Short Robot</p>
+            <select id="short-robot" required="true">
+                <option value="false">False</option>
+                <option value="true">True</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="card" id="autonomous-period">
+    <h1 class="label desktop">Autonomous Period</h1>
+    <div class="content">
+        <h1 class="label mobile">Auto Period</h1>
+        <div class="grid mobile-no-col col-2">
+            <p>Crossed White Line</p>
+            <select id="cross-line" required="true">
+                <option value="false">False</option>
+                <option value="true">True</option>
+            </select>
+            <p>Shot Top (Inner)</p><input type="number" id="auto-top-inner" required="true">
+            <p>Shot Top (Outer)</p><input type="number" id="auto-top-outer" required="true">
+            <p>Shot Bottom</p><input type="number" id="auto-bottom" required="true">
+            <p>Collected Power Cells</p>
+            <select id="auto-collect" required="true">
+                <option value="false">False</option>
+                <option value="true">True</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="card" id="teleoperated-period">
+    <h1 class="label desktop">Teleoperated Period</h1>
+    <div class="content">
+        <h1 class="label mobile">Tele Period</h1>
+        <div class="grid mobile-no-col col-2">
+            <p>Shot Top (Inner)</p><input type="number" id="tele-top-inner">
+            <p>Shot Top (Outer)</p><input type="number" id="tele-top-outer">
+            <p>Shot Bottom</p><input type="number" id="tele-bottom">
+            <p>Achieved Stage</p><input type="number" id="max-stage">
+            <p>Did Control Panel (Spinny Thing)</p>
+            <select id="control-panel" required="true">
+                <option value="false">False</option>
+                <option value="true">True</option>
+            </select>
+            <p>Collected From Ground</p>
+            <select id="collect-ground" required="true">
+                <option value="false">False</option>
+                <option value="true">True</option>
+            </select>
+            <p>Played Defense</p>
+            <select id="defense" required="true">
+                <option value="false">False</option>
+                <option value="true">True</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="card" id="end-game">
+    <h1 class="label desktop">End Game</h1>
+    <div class="content">
+        <h1 class="label mobile">End Game</h1>
+        <div class="grid mobile-no-col col-2">
+            <p>Climbed</p>
+            <select id="climbed" required="true">
+                <option value="false">False</option>
+                <option value="true">True</option>
+            </select>
+            <p>Has Leveling Mechanism</p>
+            <select id="leveler" required="true">
+                <option value="false">False</option>
+                <option value="true">True</option>
+            </select>
+            <p>Parked</p>
+            <select id="parked" required="true">
+                <option value="false">False</option>
+                <option value="true">True</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<button onclick="submit()" class="button-primary">Submit Form</button>

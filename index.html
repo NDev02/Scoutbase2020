@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAT0FXehYNWoWWSiQwtWVblE4fj9Zja52Q",
+            authDomain: "scoutbase-31e56.firebaseapp.com",
+            databaseURL: "https://scoutbase-31e56.firebaseio.com",
+            projectId: "scoutbase-31e56",
+            storageBucket: "scoutbase-31e56.appspot.com",
+            messagingSenderId: "9278278062",
+            appId: "1:9278278062:web:38867501c5a9f5dc00a03f",
+            measurementId: "G-QH6PZZ8KNW"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <script src="javascript/firebase.js"></script>
+    <script src="javascript/tba.js"></script>
+    <script src="javascript/nav.js"></script>
+    <script src="javascript/main.js"></script>
+    <script src="javascript/home.js"></script>
+    <script src="javascript/event.js"></script>
+    <script src="javascript/strategy.js"></script>
+    <script src="javascript/team.js"></script>
+    <script src="javascript/scout.js"></script>
+    <title>Scoutbase</title>
+</head>
+
+<body>
+    <div class="nav" closed>
+        <div class="nav-head mobile">
+            <img class="custom-icon" src="./assets/ui/menu.svg" onclick="toggleNavigation()">
+            <p>Scoutbase</p>
+            <img class="circular-image team-icon" src="./assets/test/team.png" onclick="setPage('my-team.html')">
+        </div>
+        <a href="javascript:setPage('home.html')">Home</a>
+        <a href="javascript:setPage('scout.html')">Scout</a>
+        <a href="javascript:setPage('statistics.html')">Statistics</a>
+        <a href="javascript:setPage('strategy.html')">Strategy</a>
+        <a href="javascript:setPage('profile.html')" class="grid-bottom">Profile</a>
+    </div>
+    <div class="container">
+    </div>
+    <div id="blocker" hidden>
+        <h1>Please Wait</h1>
+    </div>
+</body>
+
+</html>
