@@ -71,9 +71,10 @@ function setPage(url, query) {
 
     currentQuery = query;
 
-    if(currentQuery.testing) {
+    if(currentQuery.testing || eval(localStorage.getItem("testing"))) {
 
         testing = true;
+        localStorage.setItem("testing", true);
 
     }
 

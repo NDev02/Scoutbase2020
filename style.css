@@ -237,6 +237,12 @@ body {
 
 .team-list li {
     display: list-item;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.team-list li:hover {
+    color: var(--deep-blue);
 }
 
 input,select,.button-secondary {

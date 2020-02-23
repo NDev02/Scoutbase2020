@@ -113,9 +113,12 @@ async function submit() {
 
     }
 
-    setData(`/${formInputs["scouting-event"]}/${formInputs["match-number"]}/${formInputs["team-number"]}`, formInputs, () => {
+    document.querySelector("#blocker").removeAttribute("hidden");
+
+    setData(`/${formInputs["scouting-event"]}/${formInputs["team-number"]}/${formInputs["match-number"]}`, formInputs, () => {
         
-        alert("Form Submitted")
+        alert("Form Submitted");
+        document.querySelector("#blocker").setAttribute("hidden", true);
         setPage('scout.html');
 
     });

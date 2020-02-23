@@ -33,16 +33,7 @@ function eventInit() {
 
                 row.onclick = () => {
 
-                    let website = event.srcElement.parentElement.originObject.website;
-                    if(website) {
-
-                        window.open(website, "_blank");
-
-                    } else {
-
-                        alert("No website for " + event.srcElement.innerHTML);
-
-                    }
+                    setPage('team.html', {team: row.originObject.key});
 
                 }
 

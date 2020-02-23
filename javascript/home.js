@@ -1,5 +1,5 @@
 
-function homeInit() {
+async function homeInit() {
 
     currentEvents((events) => {
 
@@ -27,5 +27,25 @@ function homeInit() {
         }
 
     }, console.error);
+
+    let messages = await readData("/messages");
+    document.querySelector("#team-message-board .content p").innerHTML = messages;
+
+    let teamList = await readData(`/registered_users/${localStorage.getItem("name")}/team_watch`);
+    let list = document.querySelector(".team-list");
+    if(teamList !== null) {
+
+        for(let key in teamList) {
+
+            let team = teamList[key];
+            let template = `<li onclick="setPage('team.html', {team: '${team}'})">${team}</li>`;
+            list.innerHTML = list.innerHTML + template;
+    
+        }
+
+        list.removeAttribute("hidden");
+        document.querySelector("#team-watchlist .content p").setAttribute("hidden", true);
+
+    }
 
 }

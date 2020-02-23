@@ -1,3 +1,5 @@
+let databaseObjectId = "";
+
 async function teamInit() {
 
     let team = await asyncGetTeam(currentQuery.team);
@@ -18,8 +20,6 @@ async function teamInit() {
     website.setAttribute("href", team.website);
     generalContent.appendChild(website);
 
-    getTeamSocial(currentQuery.team, gotSocial, console.error);
-
     let aboutContent = document.querySelector("#about .content");
 
     let aboutTable = document.createElement("table");
@@ -36,10 +36,36 @@ async function teamInit() {
 
     aboutContent.appendChild(aboutTable);
 
+    let teamList = await readData(`/registered_users/${localStorage.getItem("name")}/team_watch`);
+    if(teamList !== null) {
+
+        for(let key in teamList) {
+
+            let teamListTeam = teamList[key];
+            if(teamListTeam == team.key) {
+
+                databaseObjectId = key;
+                document.querySelector("#add-watch").setAttribute("hidden", true);
+                document.querySelector("#remove-watch").removeAttribute("hidden");
+
+            }
+    
+        }
+
+    }
+
 }
 
-function gotSocial(team) {
+function addToWatchlist() {
 
-    console.log(team);
+    pushData(`/registered_users/${localStorage.getItem("name")}/team_watch`, currentQuery.team);
+    setPage('team.html', currentQuery);
+
+}
+
+function removeFromWatchlist() {
+
+    setData(`/registered_users/${localStorage.getItem("name")}/team_watch/${databaseObjectId}`, null);
+    setPage('team.html', currentQuery);
 
 }
