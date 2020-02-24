@@ -28,6 +28,7 @@ html, body {
     height: 100%;
     overflow: hidden;
     background: var(--cloud-gray);
+    position: fixed;
 }
 
 * a {
