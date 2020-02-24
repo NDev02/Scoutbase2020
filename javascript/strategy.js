@@ -219,7 +219,7 @@ function  openTeamPage() {
 
     }
 
-    window.open(`${location.origin}?page=team.html&team=frc${event.target.originObject.team_number}`, "_blank");
+    setPage('team.html', {team: event.target.originObject.key});
 
 }
 
