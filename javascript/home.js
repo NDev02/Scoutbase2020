@@ -1,6 +1,12 @@
 
 async function homeInit() {
 
+    if(localStorage.getItem("uuid") == null) {
+
+        setPage('profile.html');
+
+    }
+
     currentEvents((events) => {
 
         if(events.length > 0) {

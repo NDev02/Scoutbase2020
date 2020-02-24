@@ -1,0 +1,112 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "Scoutbase",
+    "scope": "/Scoutbase2020/",
+    "display": "browser",
+    "start_url": "https://ndev02.github.io/Scoutbase2020/",
+    "short_name": "Scoutbase",
+    "theme_color": "transparent",
+    "description": "",
+    "orientation": "any",
+    "background_color": "#0f2481",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "./assets/images/739059fe-d43e-e1cd-ffa3-4a16de145214.webPlatform.png",
+            "sizes": "44x44",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/47134873-9815-ce15-e166-0d2c8b429e7e.webPlatform.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/bfdad526-716c-5766-f6f5-51c4d1ffc685.webPlatform.png",
+            "sizes": "1240x600",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/c5f80c1d-3500-06a2-9548-3c8f74011b9b.webPlatform.png",
+            "sizes": "300x300",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/0aa5d620-3496-44b1-1a18-e6de13917e5c.webPlatform.png",
+            "sizes": "150x150",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/557d7edb-d8da-f027-ecba-3a3bb777c02f.webPlatform.png",
+            "sizes": "88x88",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/4a6f5279-a8e2-3179-4cbb-935bc4e80763.webPlatform.png",
+            "sizes": "24x24",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/244284d8-ffb1-b498-637d-c0a9b3f9a90b.webPlatform.png",
+            "sizes": "50x50",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/11fa667d-c6f2-e12b-f702-8dd43a5ae708.webPlatform.png",
+            "sizes": "620x300",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/4b2c3c62-2d26-2fcf-9e54-5babb31a30a5.webPlatform.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/ab729894-cfb2-032b-a47c-2852221818bc.webPlatform.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/816e0ec2-0a57-977e-7b47-b8dbc8b1f0cc.webPlatform.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/9167aae2-29cd-3cb7-8ad1-2d0d3a78bfee.webPlatform.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/4f55ad7f-a2b8-29f2-3afc-4b2cffda565f.webPlatform.png",
+            "sizes": "36x36",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/b307cc60-a5e9-3aa7-0cf0-70c4f33e036d.webPlatform.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/bc774f51-8aff-f61a-8c9c-4fc473c0c335.webPlatform.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/28450300-8238-065b-d19b-6ead2460c7e3.webPlatform.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/17eaf368-232d-a71c-5469-4138f42ac2bd.webPlatform.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/images/76c50716-6f45-44e5-ecc6-1ae84da6f0be.webPlatform.png",
+            "sizes": "76x76",
+            "type": "image/png"
+        }
+    ]
+}
