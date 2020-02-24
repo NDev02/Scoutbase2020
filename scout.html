@@ -37,9 +37,24 @@
                 <option value="false">False</option>
                 <option value="true">True</option>
             </select>
-            <p>Shot Top (Inner)</p><input type="number" id="auto-top-inner" required="true">
-            <p>Shot Top (Outer)</p><input type="number" id="auto-top-outer" required="true">
-            <p>Shot Bottom</p><input type="number" id="auto-bottom" required="true">
+            <p>Shot Top (Inner)</p>
+            <div class="intuitive-controls">
+                <button class="input-modifier">-</button>
+                <input type="number" id="auto-top-inner" required="true">
+                <button class="input-modifier">+</button>
+            </div>
+            <p>Shot Top (Outer)</p>
+            <div class="intuitive-controls">
+                <button class="input-modifier">-</button>
+                <input type="number" id="auto-top-outer" required="true">
+                <button class="input-modifier">+</button>
+            </div>
+            <p>Shot Bottom</p>
+            <div class="intuitive-controls">
+                <button class="input-modifier">-</button>
+                <input type="number" id="auto-bottom" required="true">
+                <button class="input-modifier">+</button>
+            </div>
             <p>Collected Power Cells</p>
             <select id="auto-collect" required="true">
                 <option value="false">False</option>
@@ -54,11 +69,31 @@
     <div class="content">
         <h1 class="label mobile">Tele Period</h1>
         <div class="grid mobile-no-col col-2">
-            <p>Shot Top (Inner)</p><input type="number" id="tele-top-inner">
-            <p>Shot Top (Outer)</p><input type="number" id="tele-top-outer">
-            <p>Shot Bottom</p><input type="number" id="tele-bottom">
-            <p>Achieved Stage</p><input type="number" id="max-stage">
-            <p>Did Control Panel (Spinny Thing)</p>
+            <p>Shot Top (Inner)</p>
+            <div class="intuitive-controls"class="intuitive-controls">
+                <button class="input-modifier">-</button>
+                <input type="number" id="tele-top-inner">
+                <button class="input-modifier">+</button>
+            </div>
+            <p>Shot Top (Outer)</p>
+            <div class="intuitive-controls">
+                <button class="input-modifier">-</button>
+                <input type="number" id="tele-top-outer">
+                <button class="input-modifier">+</button>
+            </div>
+            <p>Shot Bottom</p>
+            <div class="intuitive-controls">
+                <button class="input-modifier">-</button>
+                <input type="number" id="tele-bottom">
+                <button class="input-modifier">+</button>
+            </div>
+            <p>Achieved Stage</p>
+            <div class="intuitive-controls">
+                <button class="input-modifier">-</button>
+                <input type="number" id="max-stage">
+                <button class="input-modifier">+</button>
+            </div>
+            <p>Did Control Panel</p>
             <select id="control-panel" required="true">
                 <option value="false">False</option>
                 <option value="true">True</option>

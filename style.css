@@ -232,7 +232,7 @@ body {
 .team-list {
     margin: 0;
     padding: 0;
-    list-style: inside;
+    list-style: none;
 }
 
 .team-list li {
@@ -253,6 +253,7 @@ input,select,.button-secondary {
     outline: none;
     transition: 0.3s;
     box-shadow: inset var(--shadow);
+    -webkit-appearance: none;
 }
 
 select,.button-secondary {
@@ -305,6 +306,27 @@ select,.button-secondary {
 
 .about-team tr:nth-child(even) {
     background: rgba(0, 0, 0, 0.15);
+}
+
+.intuitive-controls {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.intuitive-controls button {
+    cursor: pointer;
+    align-self: center;
+    width: 4em;
+    height: 4em;
+    text-align: center;
+    padding: 0;
+    margin: 0 auto;
+    border: none;
+    background: var(--deep-blue);
+    color: var(--cloud-gray);
+    border-radius: var(--radius);
+    -webkit-appearance: none;
 }
 
 /* Desktop Mode */

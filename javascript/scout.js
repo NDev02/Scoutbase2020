@@ -14,6 +14,32 @@ function scoutInit() {
 
         }
 
+        if(elm.type == "number") {
+            
+            let buttons = elm.parentElement.querySelectorAll("button")
+            if(buttons.length > 0) {
+
+                let dec = buttons[0];
+                let inc = buttons[1];
+                
+                dec.onclick = function() {
+
+                    elm.value --;
+                    elm.onchange();
+
+                }
+
+                inc.onclick = function() {
+
+                    elm.value ++;
+                    elm.onchange();
+
+                }
+
+            }
+
+        }
+
         elm.onchange = function() {
 
             formInputs[elm.id] = elm.value;
