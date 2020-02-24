@@ -378,6 +378,75 @@ select,.button-secondary {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --deep-blue: #161616;
+        --cloud-gray: #111111;
+        --text-dark: #eeeeee;
+        --text-light: rgb(70, 70, 70);
+        --slate-blue: #2720a7;
+        --night-gray: rgb(236, 236, 236);
+        --card: rgb(22, 22, 22);
+        --card-text: var(--night-gray);
+        --blue-alliance: #0066b3;
+        --red-alliance: #ed1c24;
+        --failure: #ffcc00;
+        --shadow: 0px 6px 10px rgba(0, 0, 0, 0.096);
+        --neumorphic: 6px 6px 10px rgba(0, 0, 0, 0.158), 
+        -6px -6px 10px rgba(255, 255, 255, 0.767);
+        --neumorphic-in: inset 6px 6px 10px rgba(0, 0, 0, 0.158), 
+        inset -6px -6px 10px rgba(255, 255, 255, 0.767);
+        --shadow-left: -6px 0px 10px rgba(0, 0, 0, 0.3);
+        --shadow-right: 6px 0px 10px rgba(0, 0, 0, 0.3);
+        --radius: 0.9em;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .card {
+        color: white;
+    }
+
+    .nav * {
+        color: white!important;
+    }
+
+    input,select,button,a {
+        --deep-blue: rgb(209, 209, 209);
+        color: white;
+    }
+
+    .input-modifier {
+        background: #222222!important;
+        color: white!important;
+    }
+
+    .button-primary {
+        box-shadow: none!important;
+        padding: 2em;
+        background: var(--card);
+        animation: none!important;
+    }
+
+    .button-primary:hover {
+        box-shadow: none!important;
+        padding: 2em;
+        background: var(--card);
+        animation: none!important;
+    }
+
+    .neumorphic-push {
+        box-shadow: none;
+        animation: none;
+    }
+
+    .neumorphic-push:hover {
+        box-shadow: none;
+        animation: none;
+    }
+
+}
+
 @keyframes pressOut {
     0% { box-shadow: var(--neumorphic-in); }
     50% { box-shadow: none; }
