@@ -330,6 +330,10 @@ select,.button-secondary {
     -webkit-appearance: none;
 }
 
+.no-padding {
+    padding: 0!important;
+}
+
 /* Desktop Mode */
 @media (min-width: 801px) {
     body {
@@ -377,7 +381,7 @@ select,.button-secondary {
         background: rgba(0, 0, 0, 0.3);
     }
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
 
     :root {
@@ -445,7 +449,7 @@ select,.button-secondary {
         animation: none;
     }
 
-}
+} */
 
 @keyframes pressOut {
     0% { box-shadow: var(--neumorphic-in); }

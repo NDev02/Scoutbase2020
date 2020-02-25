@@ -93,6 +93,19 @@ function getTeams(eventKey, sortBy, cb, err) {
 
 }
 
+async function asyncGetTeams(eventKey, sortBy) {
+
+    let data = await asyncReq(`/event/${eventKey}/teams`);
+    data.sort((a, b) => {
+    
+        return a[sortBy] - b[sortBy];
+    
+    });
+    return data;
+
+}
+
+
 function getTeam(teamKey, cb, err) {
 
     basicReq(`/team/${teamKey}`, cb, err);
