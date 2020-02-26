@@ -330,8 +330,8 @@ select,.button-secondary {
     -webkit-appearance: none;
 }
 
-.no-padding {
-    padding: 0!important;
+.svg-container {
+    overflow: hidden;
 }
 
 /* Desktop Mode */

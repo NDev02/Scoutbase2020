@@ -1,7 +1,9 @@
 // Disable PINCH and DBLTAP zoom
 
 document.addEventListener('touchmove', function (event) {
-    if (event.scale !== 1) { event.preventDefault(); }
+    if (event.scale !== undefined && event.scale !== 1) { 
+      event.preventDefault();
+    }
   }, { passive: false });
 
   var lastTouchEnd = 0;

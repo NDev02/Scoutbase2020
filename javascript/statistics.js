@@ -21,6 +21,12 @@ async function statsInit() {
 
 function generateCharts(data) {
 
+    let layout = {
+        autosize: true,
+        dragmode: true,
+        responsive: true
+    };
+
     data = Object.values(data);
     data = data.filter(elm => {return elm != undefined});
 
@@ -57,7 +63,7 @@ function generateCharts(data) {
         name: 'Bottom',
         boxmean: true,
         marker: {
-            color: 'rgb(20, 20, 120)'
+            color: '#0f2481'
         }
     };
     let autoShotTopOuter = {
@@ -66,7 +72,7 @@ function generateCharts(data) {
         name: 'Top Outer',
         boxmean: true,
         marker: {
-            color: 'rgb(20, 20, 120)'
+            color: '#0f2481'
         }
     };
     let autoShotTopInner = {
@@ -75,10 +81,10 @@ function generateCharts(data) {
         name: 'Top Inner',
         boxmean: true,
         marker: {
-            color: 'rgb(20, 20, 120)'
+            color: '#0f2481'
         }
     };
-    Plotly.newPlot('auto-shot', [autoShotBottom, autoShotTopOuter, autoShotTopInner], {font: {family: 'Roboto, sans-serif'}}, {responsive: true});
+    Plotly.newPlot('auto-shot', [autoShotBottom, autoShotTopOuter, autoShotTopInner], {font: {family: 'Roboto, sans-serif'}}, layout);
 
     let teleShotBottom = {
         x: flatData["tele-bottom"],
@@ -86,7 +92,7 @@ function generateCharts(data) {
         name: 'Bottom',
         boxmean: true,
         marker: {
-            color: 'rgb(20, 20, 120)'
+            color: '#0f2481'
         }
     };
     let teleShotTopOuter = {
@@ -95,7 +101,7 @@ function generateCharts(data) {
         name: 'Top Outer',
         boxmean: true,
         marker: {
-            color: 'rgb(20, 20, 120)'
+            color: '#0f2481'
         }
     };
     let teleShotTopInner = {
@@ -104,15 +110,13 @@ function generateCharts(data) {
         name: 'Top Inner',
         boxmean: true,
         marker: {
-            color: 'rgb(20, 20, 120)'
+            color: '#0f2481'
         }
     };
-    Plotly.newPlot('tele-shot', [teleShotBottom, teleShotTopOuter, teleShotTopInner], {font: {family: 'Roboto, sans-serif'}}, {responsive: true});
+    Plotly.newPlot('tele-shot', [teleShotBottom, teleShotTopOuter, teleShotTopInner], {font: {family: 'Roboto, sans-serif'}}, layout);
 }
 
 function arrAvg(arr) {
-
-    console.log(arr);
 
     let sum = 0;
 
