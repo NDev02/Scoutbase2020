@@ -65,5 +65,13 @@
         z-index: 1;
         width: 90%;
         box-shadow: var(--shadow-right);
+        animation: opening 0.7s; 
     }
+}
+
+@keyframes opening {
+
+    from {left: -100%;}
+    to {left: 0;}
+
 }
