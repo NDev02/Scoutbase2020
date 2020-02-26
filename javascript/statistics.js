@@ -1,5 +1,7 @@
 async function statsInit() {
     
+    hideCharts();
+
     let teams = await asyncGetTeams(localStorage.getItem("currentEvent"), "team_number");
     let teamList = document.querySelector("#teams");
     for(let team of teams) {
@@ -10,17 +12,71 @@ async function statsInit() {
 
     }
 
-    document.querySelector("#team-select").oninput = async () => {
+    document.querySelector("#team-select").oninput = async (val) => {
 
-        let data = await readData(`/${localStorage.getItem("currentEvent")}/${event.target.value}/`);
-        generateCharts(data);
+        if(!val.real) {
 
+            let data = await readData(`/${localStorage.getItem("currentEvent")}/${event.target.value}/`);
+            generateCharts(data);
+
+        } else {
+
+            let data = await readData(`/${localStorage.getItem("currentEvent")}/${val.real}/`);
+            generateCharts(data);
+
+        }
+
+    }
+
+    if(currentQuery.team) {
+
+        document.querySelector("#team-select").value = currentQuery.team.substring(3);
+        document.querySelector("#team-select").oninput({real: currentQuery.team.substring(3)});
+
+    }
+
+}
+
+function hideCharts() {
+
+    let cards = document.querySelectorAll(".card:not(:first-child)");
+    for(let card of cards) {
+
+        card.setAttribute("hidden", true);
+    
+    }
+
+}
+
+function showCharts() {
+
+    let cards = document.querySelectorAll(".card:not(:first-child)");
+    for(let card of cards) {
+
+        card.removeAttribute("hidden");
+    
     }
 
 }
 
 function generateCharts(data) {
 
+    if(!data || document.querySelector("#team-select").value == "") {
+        
+        hideCharts();
+        return;
+
+    } else {
+
+        showCharts();
+    
+    }
+
+    let options = {
+        font: {
+            family: 'Roboto, sans-serif'
+        }
+    };
     let layout = {
         autosize: true,
         dragmode: true,
@@ -55,7 +111,15 @@ function generateCharts(data) {
 
     }
 
-    console.log(flatData);
+    let crossedLine = {
+        values: [getArrOccurence(flatData["cross-line"], "false"), getArrOccurence(flatData["cross-line"], "true")],
+        labels: ["Didn't Cross Auto Line", "Crossed Auto Line"],
+        type: 'pie',
+        marker: {
+            colors: ['red', 'green']
+        }
+    };
+    Plotly.newPlot('crossed-line', [crossedLine], options, layout);
 
     let autoShotBottom = {
         x: flatData["auto-bottom"],
@@ -84,7 +148,17 @@ function generateCharts(data) {
             color: '#0f2481'
         }
     };
-    Plotly.newPlot('auto-shot', [autoShotBottom, autoShotTopOuter, autoShotTopInner], {font: {family: 'Roboto, sans-serif'}}, layout);
+    Plotly.newPlot('auto-shot', [autoShotBottom, autoShotTopOuter, autoShotTopInner], options, layout);
+
+    let collectedAuto = {
+        values: [getArrOccurence(flatData["auto-collect"], "false"), getArrOccurence(flatData["auto-collect"], "true")],
+        labels: ["No Gathering in Auto", "Gathered in Auto"],
+        type: 'pie',
+        marker: {
+            colors: ['red', 'green']
+        }
+    };
+    Plotly.newPlot('collected-auto', [collectedAuto], options, layout);
 
     let teleShotBottom = {
         x: flatData["tele-bottom"],
@@ -113,7 +187,49 @@ function generateCharts(data) {
             color: '#0f2481'
         }
     };
-    Plotly.newPlot('tele-shot', [teleShotBottom, teleShotTopOuter, teleShotTopInner], {font: {family: 'Roboto, sans-serif'}}, layout);
+    Plotly.newPlot('tele-shot', [teleShotBottom, teleShotTopOuter, teleShotTopInner], options, layout);
+
+    let controlPanel = {
+        values: [getArrOccurence(flatData["control-panel"], "false"), getArrOccurence(flatData["control-panel"], "true")],
+        labels: ["No Control Panel", "Did Control Panel"],
+        type: 'pie',
+        marker: {
+            colors: ['red', 'green']
+        }
+    };
+    Plotly.newPlot('control-panel', [controlPanel], options, layout);
+
+    let maxStage = {
+        values: [getArrOccurence(flatData["max-stage"], 0), getArrOccurence(flatData["max-stage"], 1), getArrOccurence(flatData["max-stage"], 2), getArrOccurence(flatData["max-stage"], 3)],
+        labels: ["None", "Stage 1 (9 Power Cells)", "Stage 2 (29 + Rotation)", "Stage 3 (49 + Position)"],
+        type: 'pie',
+        marker: {
+            colors: ['red', 'orange', 'yellow', 'green']
+        }
+    };
+    Plotly.newPlot('achieved-stage', [maxStage], options, layout);
+
+    let noEndGameCount = flatData["climbed"].length - (getArrOccurence(flatData["climbed"], "true") + getArrOccurence(flatData["parked"], "true"))
+    let endGame = {
+        values: [noEndGameCount, getArrOccurence(flatData["parked"], "true"), getArrOccurence(flatData["climbed"], "true")],
+        labels: ["Nothing", "Parked", "Climbed"],
+        type: 'pie',
+        marker: {
+            colors: ['red', 'orange', 'green']
+        }
+    };
+    Plotly.newPlot('end-game', [endGame], options, layout);
+
+    let defense = {
+        values: [getArrOccurence(flatData["defense"], "false"), getArrOccurence(flatData["defense"], "true")],
+        labels: ["No Defense", "Defense"],
+        type: 'pie',
+        marker: {
+            colors: ['red', 'green']
+        }
+    };
+    Plotly.newPlot('defense', [defense], options, layout);
+
 }
 
 function arrAvg(arr) {
@@ -128,4 +244,19 @@ function arrAvg(arr) {
 
     return sum / arr.length;
     
+}
+
+function getArrOccurence(arr, search) {
+
+    let count = 0;
+
+    for(let val of arr) {
+
+        if(val == search)
+            count ++;
+
+    }
+
+    return count;
+
 }

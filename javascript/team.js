@@ -56,6 +56,12 @@ async function teamInit() {
 
 }
 
+function viewStatistics() {
+
+    setPage('statistics.html', {team: currentQuery.team});
+
+}
+
 function addToWatchlist() {
 
     pushData(`/registered_users/${localStorage.getItem("name")}/team_watch`, currentQuery.team);

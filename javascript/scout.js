@@ -3,7 +3,9 @@ let originalInputs;
 
 function scoutInit() {
 
-    formInputs = {};
+    formInputs = {
+        "scouted-by": localStorage.uuid
+    };
     
     let inputs = document.querySelectorAll("input");
     for(let elm of inputs) {
