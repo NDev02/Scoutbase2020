@@ -31,6 +31,17 @@
     </div>
 </div>
 
+<div class="card" id="secret-menus">
+    <h1 class="label desktop">Secret Menus</h1>
+    <div class="content">
+        <h1 class="label mobile">Secret Menus</h1>
+        <div class="grid mobile-no-col col-2">
+            <label>Pit Scout</label>
+            <button onclick="setPage('pit-scout.html')" class="button-secondary">Go to Page</button>
+        </div>
+    </div>
+</div>
+
 <div class="card" id="debugging-tools">
     <h1 class="label desktop">Debugging Tools</h1>
     <div class="content">
@@ -39,7 +50,7 @@
             <label>Toggle Testing</label>
             <button onclick="localStorage.setItem('testing', !(eval(localStorage.getItem('testing')) || false))" class="button-secondary">Toggle</button>
             <label>Reset Application Data</label>
-            <button onclick="location.reload(true)" class="button-secondary">Reset</button>
+            <button onclick="localStorage.clear();location.reload(true)" class="button-secondary">Reset</button>
         </div>
     </div>
 </div>

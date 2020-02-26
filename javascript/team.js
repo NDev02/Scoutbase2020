@@ -24,12 +24,13 @@ async function teamInit() {
 
     let aboutTable = document.createElement("table");
     aboutTable.classList = "about-team";
+    let robotSpecifics = await readData(`/teams/${team.team_number}`);
     let robotInfo = ["Height", "Weight", "Shoots", "Chassis", "Defense", "Control Panel", "Climb", "Level", "Autonomous"];
     for(let rowHead of robotInfo) {
 
         let row = document.createElement("tr");
         row.appendChild(createElement("th", rowHead));
-        row.appendChild(createElement("td", "place_holder"));
+        row.appendChild(createElement("td", robotSpecifics[rowHead]));
         aboutTable.appendChild(row);
 
     }

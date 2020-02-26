@@ -1,0 +1,31 @@
+<!--pitScoutInit()-->
+
+<div class="card" id="form-configuration">
+    <h1 class="label desktop">Form Configuration</h1>
+    <div class="content">
+        <h1 class="label mobile">Form Configuration</h1>
+        <div class="grid mobile-no-col col-2">
+            <p>Team Number</p><input type="number" id="team-number" required="true">
+        </div>
+    </div>
+</div>
+
+<div class="card" id="robot-card">
+    <h1 class="label desktop">Robot Information</h1>
+    <div class="content">
+        <h1 class="label mobile">Robot Information</h1>
+        <div class="grid mobile-no-col col-2">
+            <p>Height(in)</p><input type="number" id="Height" required="true">
+            <p>Weight(lbs)</p><input type="number" id="Weight" required="true">
+            <p>Shoots Target: High/Low</p><input type="text" id="Shoots" required="true">
+            <p>Chassis Type</p><input type="text" id="Chassis" required="true">
+            <p>Defense: Y/N</p><input type="text" id="Defense" required="true">
+            <p>Control Panel: Position/Rotation</p><input type="text" id="Control_Panel" required="true">
+            <p>Climb: Y/Side/Center/N</p><input type="text" id="Climb" required="true">
+            <p>Levels on Switch: Y/N</p><input type="text" id="Level" required="true">
+            <p>Autonomous: Explain</p><input type="text" id="Autonomous" required="true">
+        </div>
+    </div>
+</div>
+
+<button onclick="submitPit()" class="button-primary">Submit Form</button>
