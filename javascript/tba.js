@@ -44,8 +44,7 @@ function currentEvents(cb, err) {
 
             let start = new Date(ev.start_date);
             let end = new Date(ev.end_date);
-            end.setDate(end.getDate() + 7);
-            return (date <= end && date >= start);
+            return (date <= end && date >= start && ev.key !== '2020mimcc');
 
         });
         cb(filtered);
