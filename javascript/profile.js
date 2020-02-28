@@ -4,7 +4,7 @@ async function profileInit() {
         
         localStorage.clear();
         let name = prompt("Enter your name to setup application");
-        name = name.toLowerCase().replace(/ /g, "_");
+        name = name.toLowerCase().replace(/ /g, "_").replace(/\./g, "_");
         let uuid = uuidv4();
         pushData(`/registered_users/${name}`, uuid);
         localStorage.setItem("uuid", uuid);
