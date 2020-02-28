@@ -44,7 +44,7 @@ function currentEvents(cb, err) {
 
             let start = new Date(ev.start_date);
             let end = new Date(ev.end_date);
-            return (date <= end && date >= start && ev.key !== '2020mimcc');
+            return (date <= end && date >= start);
 
         });
         cb(filtered);
@@ -134,5 +134,23 @@ async function validData(eventKey, teamKey, matchNumber) {
 
     }
     return includes;
+
+}
+
+async function getMatchesTeams(eventKey) {
+
+    let matchesObj = {};
+    let matches = await asyncReq(`/event/${eventKey}/matches`);
+    for(let match of matches) {
+
+        let blue = (match.alliances.blue.team_keys);
+        let red  = (match.alliances.red.team_keys);
+        let flat = (red.concat(blue));
+        flat = JSON.parse(JSON.stringify(flat).replace(/frc/g, ""));
+        matchesObj[match.match_number] = flat;
+
+    }
+
+    return matchesObj;
 
 }

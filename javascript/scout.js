@@ -79,7 +79,12 @@ function scoutInit() {
 
             let opt = document.createElement("option");
             opt.setAttribute("value", event.key);
-            opt.appendChild(document.createTextNode(event.name));
+            let evName = event.name;
+            if(evName.length > 30) {
+                opt.appendChild(document.createTextNode(event.name.substring(0, 30) + "..."));
+            } else {
+                opt.appendChild(document.createTextNode(event.name));
+            }
             document.querySelector("#scouting-event").appendChild(opt);
 
         });
