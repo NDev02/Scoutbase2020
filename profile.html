@@ -49,6 +49,8 @@
         <div class="grid mobile-no-col col-2">
             <label>Toggle Testing</label>
             <button onclick="localStorage.setItem('testing', !(eval(localStorage.getItem('testing')) || false))" class="button-secondary">Toggle</button>
+            <label>Soft Reset</label>
+            <button onclick="location.reload(true)" class="button-secondary">Reset</button>
             <label>Reset Application Data</label>
             <button onclick="localStorage.clear();location.reload(true)" class="button-secondary">Reset</button>
         </div>
