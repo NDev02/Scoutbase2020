@@ -40,15 +40,7 @@ function currentEvents(cb, err) {
     }
     basicReq(`/events/${date.getFullYear()}/simple`, events => {
 
-        filtered = events.filter(ev => {
-
-            let start = new Date(ev.start_date);
-            let end = new Date(ev.end_date);
-            let adjusted = new Date(end.getDate() + 3);
-            return (date <= adjusted && date >= start);
-
-        });
-        cb(filtered);
+        cb(events);
 
     }, err);
 
