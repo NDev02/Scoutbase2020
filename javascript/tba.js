@@ -44,7 +44,8 @@ function currentEvents(cb, err) {
 
             let start = new Date(ev.start_date);
             let end = new Date(ev.end_date);
-            return (date <= end && date >= start);
+            let adjusted = new Date(end.getDate() + 3);
+            return (date <= adjusted && date >= start);
 
         });
         cb(filtered);
