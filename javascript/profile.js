@@ -34,6 +34,8 @@ async function profileInit() {
 
     }
 
+    document.querySelector("#version").value = version;
+
 } 
 
 function uuidv4() {

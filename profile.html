@@ -47,6 +47,8 @@
     <div class="content">
         <h1 class="label mobile">Debugging Tools</h1>
         <div class="grid mobile-no-col col-2">
+            <label>Version</label>
+            <input id="version" disabled>
             <label>Toggle Testing</label>
             <button onclick="localStorage.setItem('testing', !(eval(localStorage.getItem('testing')) || false))" class="button-secondary">Toggle</button>
             <label>Soft Reset</label>

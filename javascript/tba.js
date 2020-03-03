@@ -40,6 +40,21 @@ function currentEvents(cb, err) {
     }
     basicReq(`/events/${date.getFullYear()}/simple`, events => {
 
+        events = events.filter(elm => {
+
+            let date = new Date();
+            
+            let originalStart = new Date(elm.start_date);
+            let start = new Date(originalStart.getFullYear(), originalStart.getMonth(), originalStart.getDate() - 1);
+            
+            let originalEnd = new Date(elm.end_date);
+            let end = new Date(originalEnd.getFullYear(), originalEnd.getMonth(), originalEnd.getDate() + 1);
+
+            // return true;
+            return (start < date && end > date);
+
+        });
+        
         cb(events);
 
     }, err);
