@@ -139,16 +139,17 @@ function generateCharts(data) {
             color: '#0f2481'
         }
     };
-    let autoShotTopInner = {
-        x: flatData["auto-top-inner"],
-        type: 'box',
-        name: 'Top Inner',
-        boxmean: true,
+    Plotly.newPlot('auto-shot', [autoShotBottom, autoShotTopOuter], options, layout);
+
+    let shotDistanceAuto = {
+        values: [getArrOccurence(flatData["auto-shot-distance"], "false"), getArrOccurence(flatData["auto-shot-distance"], "true")],
+        labels: ["Shot against wall", "Shot from distance"],
+        type: 'pie',
         marker: {
-            color: '#0f2481'
+            colors: ['red', 'green']
         }
     };
-    Plotly.newPlot('auto-shot', [autoShotBottom, autoShotTopOuter, autoShotTopInner], options, layout);
+    Plotly.newPlot('shot-distance-auto', [shotDistanceAuto], options, layout);
 
     let collectedAuto = {
         values: [getArrOccurence(flatData["auto-collect"], "false"), getArrOccurence(flatData["auto-collect"], "true")],
@@ -178,16 +179,17 @@ function generateCharts(data) {
             color: '#0f2481'
         }
     };
-    let teleShotTopInner = {
-        x: flatData["auto-top-inner"],
-        type: 'box',
-        name: 'Top Inner',
-        boxmean: true,
+    Plotly.newPlot('tele-shot', [teleShotBottom, teleShotTopOuter], options, layout);
+
+    let shotDistanceTele = {
+        values: [getArrOccurence(flatData["tele-shot-distance"], "false"), getArrOccurence(flatData["tele-shot-distance"], "true")],
+        labels: ["Shot against wall", "Shot from distance"],
+        type: 'pie',
         marker: {
-            color: '#0f2481'
+            colors: ['red', 'green']
         }
     };
-    Plotly.newPlot('tele-shot', [teleShotBottom, teleShotTopOuter, teleShotTopInner], options, layout);
+    Plotly.newPlot('shot-distance-tele', [shotDistanceTele], options, layout);
 
     let controlPanel = {
         values: [getArrOccurence(flatData["control-panel"], "false"), getArrOccurence(flatData["control-panel"], "true")],
@@ -198,16 +200,6 @@ function generateCharts(data) {
         }
     };
     Plotly.newPlot('control-panel', [controlPanel], options, layout);
-
-    let maxStage = {
-        values: [getArrOccurence(flatData["max-stage"], 0), getArrOccurence(flatData["max-stage"], 1), getArrOccurence(flatData["max-stage"], 2), getArrOccurence(flatData["max-stage"], 3)],
-        labels: ["None", "Stage 1 (9 Power Cells)", "Stage 2 (29 + Rotation)", "Stage 3 (49 + Position)"],
-        type: 'pie',
-        marker: {
-            colors: ['red', 'orange', 'yellow', 'green']
-        }
-    };
-    Plotly.newPlot('achieved-stage', [maxStage], options, layout);
 
     let noEndGameCount = flatData["climbed"].length - (getArrOccurence(flatData["climbed"], "true") + getArrOccurence(flatData["parked"], "true"))
     let endGame = {
