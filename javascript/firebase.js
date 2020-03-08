@@ -1,3 +1,4 @@
+// Database
 
 let database = firebase.database();
 
@@ -29,4 +30,25 @@ function pushTeams(teams) {
         setData(`/teams/${team.key}/`, team);
     });
     
+}
+
+// Messaging
+
+let notifier;
+
+function initNotifications() {
+
+    notifier = firebase.messaging();
+    notifier.requestPermission().then(e => {
+
+        return notifier.getToken();
+
+    }).then(token => {
+
+    }).catch(err => console.log);
+
+    notifier.onMessage(payload => {
+
+    });
+
 }

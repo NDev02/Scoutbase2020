@@ -1,4 +1,4 @@
-let version = "1.0.5";
+let version = "Beta 1.1.0";
 
 let testing = false;
 
@@ -6,6 +6,8 @@ let currentQuery = {};
 
 window.addEventListener("load", () => {
 
+    initNotifications();
+    
     validationInterval = setInterval(pageValidate, 1000 / 60);
     let q = {};
     for(let item of location.search.substring(1).split("&")) {
