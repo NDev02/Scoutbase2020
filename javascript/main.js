@@ -6,8 +6,6 @@ let currentQuery = {};
 
 window.addEventListener("load", () => {
 
-    initNotifications();
-    
     validationInterval = setInterval(pageValidate, 1000 / 60);
     let q = {};
     for(let item of location.search.substring(1).split("&")) {
