@@ -80,8 +80,8 @@ function scoutInit() {
             let opt = document.createElement("option");
             opt.setAttribute("value", event.key);
             let evName = event.name;
-            if(evName.length > 30) {
-                opt.appendChild(document.createTextNode(event.name.substring(0, 30) + "..."));
+            if(evName.length > 25) {
+                opt.appendChild(document.createTextNode(event.name.substring(0, 22) + "..."));
             } else {
                 opt.appendChild(document.createTextNode(event.name));
             }

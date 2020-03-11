@@ -1,4 +1,4 @@
-let version = "Beta 1.0.8";
+let version = "Beta 1.1.0";
 
 let testing = false;
 
